@@ -1,5 +1,5 @@
 async function Adminauth(token) {
-    const api_data = await fetch("http://localhost:3030/admin/auth/", {
+    const api_data = await fetch("https://code-crafters-y4c1.onrender.com/admin/auth/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
