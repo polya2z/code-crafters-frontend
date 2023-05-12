@@ -39,6 +39,9 @@ function Assignments() {
     const api_data = await fetch("https://code-crafters-y4c1.onrender.com/api/user-details", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_token: localStorage.getItem('user_details')
+    }),
     });
     const data = await api_data.json();
 

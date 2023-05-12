@@ -14,8 +14,8 @@ import Members from './AdminPages/Members';
 import VerifiedMembers from './AdminPages/VerifiedMembers';
 import AdminAssignments from './AdminPages/Assignments';
 import AssignmentShow from './Pages/AssignmentShow';
-import Notices from './Pages/Notices';
-
+import Notices from "./Pages/Notices"
+import AdminNotices from "./AdminPages/Notices"
 
 function App() {
   return (
@@ -30,12 +30,13 @@ function App() {
           <Route path="/register" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/assignments" element={<Assignments />} />
+          <Route path="/dashboard/notices" element={<Notices />} />
           <Route path="/dashboard/assignments/:id" element={<AssignmentShow />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/dashboard/query" element={<AdminQuery />} />
           <Route path="/admin/dashboard/query/:id" element={<Queryshow />} />
-          <Route path="/admin/dashboard/notices" element={<Notices />} />
+          <Route path="/admin/dashboard/notices" element={<AdminNotices />} />
           <Route path="/admin/dashboard/members-new" element={<Members />} />
           <Route path="/admin/dashboard/members-verified" element={<VerifiedMembers />} />
           <Route path="/admin/dashboard/assignments" element={<AdminAssignments />} />
