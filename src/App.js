@@ -4,7 +4,6 @@ import Home from './Pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
 import Assignments from './Pages/Assignments';
-import Notices from './AdminPages/Notices';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import AdminLogin from './AdminPages/Login';
@@ -15,6 +14,7 @@ import Members from './AdminPages/Members';
 import VerifiedMembers from './AdminPages/VerifiedMembers';
 import AdminAssignments from './AdminPages/Assignments';
 import AssignmentShow from './Pages/AssignmentShow';
+import Notices from './Pages/Notices';
 
 
 function App() {
