@@ -40,7 +40,7 @@ function Contact() {
                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
                         {msg ? <Alert text={msg} /> : ""}
                         <form onSubmit={submitData}>
-                            <div class="flex flex-wrap -m-2">
+                            <div class="flex flex-wrap -m-2 border p-3 rounded-xl">
 
                                 <div class="p-2 w-1/2">
                                     <div class="relative">

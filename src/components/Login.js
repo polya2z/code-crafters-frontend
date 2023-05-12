@@ -39,6 +39,7 @@ function Login() {
             <section class="text-gray-600 body-font">
                 <div class="container px-5 py-8 mx-auto flex flex-wrap items-center">
                     <div class="lg:w-1/2 md:w-full bg-gray-100 rounded-lg p-8 flex flex-col md:m-auto w-full mt-10 md:mt-0">
+                    <img src='member.png'  className='w-52 rounded-full m-auto'/>
                         <form onSubmit={loginUser}>
                             <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login | For Approved Members</h2>
                             {msg ? <Alert text={msg} /> : ""}

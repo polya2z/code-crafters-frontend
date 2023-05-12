@@ -39,6 +39,7 @@ function Login() {
                 <div class="container px-5 py-8 mx-auto flex flex-wrap items-center">
                     <div class="lg:w-1/2 md:w-full bg-gray-100 rounded-lg p-8 flex flex-col md:m-auto w-full mt-10 md:mt-0">
                         <form onSubmit={loginUser}>
+                    <img src='/admin.png'  className='w-52 rounded-full m-auto'/>
                             <h2 class="text-rose-600 text-lg font-medium title-font mb-5">Login | For Admin Users</h2>
                             {msg ? <Alert text={msg} /> : ""}
                             <div class="relative mb-4">

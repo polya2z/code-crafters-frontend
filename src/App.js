@@ -21,7 +21,7 @@ function App() {
   return (
     <>
     {/* <h6 className='text-center bg-gray-200'>BASE TRIAL VERSION 1.11 - UnderDev - ZBYTES 😁</h6> */}
-    <h6 className="text-center bg-gray-200 sticky top-0">BASE TRIAL VERSION 1.11 - UnderDev - ZBYTES 😁</h6>
+    {/* <h6 className="text-center bg-gray-200 sticky top-0">BASE TRIAL VERSION 1.11 - UnderDev - ZBYTES 😁</h6> */}
 
       <BrowserRouter>
         <Routes>

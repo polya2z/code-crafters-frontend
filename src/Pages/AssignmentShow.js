@@ -37,6 +37,9 @@ function AssignmentShow() {
     const api_data = await fetch("https://code-crafters-y4c1.onrender.com/api/user-details", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_token: localStorage.getItem('user_details')
+    }),
     });
     const data = await api_data.json();
 
@@ -54,19 +57,51 @@ function AssignmentShow() {
 
 
 
-  async function handleSubmit(e) {
+  const [file, setFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+
+
+
+  // async function handleSubmit(e) {
+  //   const api_data = await fetch(`https://code-crafters-y4c1.onrender.com/api/assignment/submit`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       user_id: user_id,
+  //       assignment_id: id,
+  //     }),
+  //   });
+  //   const data = await api_data.json();
+  //   setassignment(data);
+  // }
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const api_data = await fetch(`https://code-crafters-y4c1.onrender.com/api/assignment/submit`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        user_id: user_id,
-        assignment_id: id,
-      }),
-    });
-    const data = await api_data.json();
-    setassignment(data);
-  }
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("/https://code-crafters-y4c1.onrender.com/api/assignment/submit", {
+        method: "POST",
+        body: JSON.stringify({
+          user_id: user_id,
+          assignment_id: id,
+          file: formData
+        }),
+      });
+      const data = await response.json();
+      setassignment(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
 
 
   useEffect(() => {
@@ -117,8 +152,8 @@ function AssignmentShow() {
               <form class="flex flex-col items-center space-x-6 mt-3" onSubmit={handleSubmit}>
                 <label class="block">
                   <span class="sr-only">Choose profile photo</span>
-                  <input
-                    type="file"
+                  <input required
+                    type="file"  onChange={handleFileChange}
                     class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4  file:rounded-full file:border-0  file:text-sm file:font-semibold  file:bg-violet-50 file:text-violet-700   hover:file:bg-violet-100 "
                   />
                 </label>
