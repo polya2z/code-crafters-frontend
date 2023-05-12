@@ -26,6 +26,7 @@ function Login() {
             setEmail("");
             setPassword("");
             window.location.href = "/dashboard";
+            localStorage.setItem('user_token', data.token);
         }
         setmsg(data.msg);
     }
