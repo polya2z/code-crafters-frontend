@@ -32,12 +32,7 @@ function Dashboard() {
 
   async function logoutUser(){
     setLoading(true);
-    const api_data = await fetch("https://code-crafters-y4c1.onrender.com/api/logout/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-    });
-    const data = await api_data.json();
-    console.log(data);
+    localStorage.removeItem('user_token');
     window.location.href = "/login";
     setLoading(false);
   }

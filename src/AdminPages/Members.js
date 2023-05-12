@@ -8,8 +8,7 @@ function Member() {
     const [Users, setUsers] = useState([])
     const [Loading, setLoading] = useState(false)
     async function authAdmin() {
-        let token = localStorage.getItem('admin_token');
-        let data = await Adminauth(token);
+        let data = await Adminauth();
         console.log('data');
         console.log(data);
         if (!data.user_valid) {
