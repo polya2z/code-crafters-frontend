@@ -28,12 +28,7 @@ function Dashboard() {
 
     async function logoutUser() {
         setLoading(true);
-        const api_data = await fetch("https://code-crafters-y4c1.onrender.com/admin/auth/logout", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-        });
-        const data = await api_data.json();
-        console.log(data);
+        localStorage.removeItem('admin_token');
         window.location.href = "/admin/login";
         setLoading(false);
     }
