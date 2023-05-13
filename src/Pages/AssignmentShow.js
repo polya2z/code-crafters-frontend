@@ -38,12 +38,13 @@ function AssignmentShow() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        user_token: localStorage.getItem('user_details')
+        user_token: localStorage.getItem('user_token')
     }),
     });
     const data = await api_data.json();
-
-    const api_data1 = await fetch('https://code-crafters-y4c1.onrender.com/api/assignment/status', {
+    console.log('datsssa');
+    console.log(data);
+      const api_data1 = await fetch('https://code-crafters-y4c1.onrender.com/api/assignment/status', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -55,50 +56,31 @@ function AssignmentShow() {
     setStatus(status1);
   }
 
-
-
-  const [file, setFile] = useState(null);
-
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
-
-
-
-
-  // async function handleSubmit(e) {
-  //   const api_data = await fetch(`https://code-crafters-y4c1.onrender.com/api/assignment/submit`, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       user_id: user_id,
-  //       assignment_id: id,
-  //     }),
-  //   });
-  //   const data = await api_data.json();
-  //   setassignment(data);
-  // }
-
+  const fileInputRef = React.createRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("file", file);
-
+    setLoading(true)
+    const file = fileInputRef.current.files[0]; // get the first file selected by the user
+    const formData = new FormData(); // create a new FormData object
+    formData.append("user_id", user_id); // add user_id to the form data
+    formData.append("assignment_id", id); // add assignment_id to the form data
+    formData.append("file", file); // add the file to the form data
+  
     try {
-      const response = await fetch("/https://code-crafters-y4c1.onrender.com/api/assignment/submit", {
+      const response = await fetch("https://code-crafters-y4c1.onrender.com/api/assignment/submit", {
         method: "POST",
-        body: JSON.stringify({
-          user_id: user_id,
-          assignment_id: id,
-          file: formData
-        }),
+        body: formData,
       });
       const data = await response.json();
-      setassignment(data);
+      if(data.success){
+        setassignment(data.assignment);
+        window.location.href = "/dashboard/assignments";
+      }
     } catch (error) {
       console.error(error);
     }
+    setLoading(false)
   };
 
 
@@ -153,7 +135,7 @@ function AssignmentShow() {
                 <label class="block">
                   <span class="sr-only">Choose profile photo</span>
                   <input required
-                    type="file"  onChange={handleFileChange}
+                    type="file" ref={fileInputRef} accept="application/pdf"
                     class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4  file:rounded-full file:border-0  file:text-sm file:font-semibold  file:bg-violet-50 file:text-violet-700   hover:file:bg-violet-100 "
                   />
                 </label>

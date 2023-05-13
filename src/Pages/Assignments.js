@@ -40,7 +40,7 @@ function Assignments() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        user_token: localStorage.getItem('user_details')
+        user_token: localStorage.getItem('user_token')
     }),
     });
     const data = await api_data.json();
