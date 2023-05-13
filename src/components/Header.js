@@ -4,7 +4,7 @@ function Header() {
     return (
 
         <div class="relative h-screen overflow-hidden bg-indigo-900">
-            <img src='code.gif' class="absolute object-cover w-full h-full"  >
+            <img src='head.png' class="absolute object-cover w-full h-full"  >
     </img>
             <div class="absolute inset-0 bg-black opacity-25">
             </div>
@@ -43,7 +43,7 @@ function Header() {
                     <p className='text-center mt-3 text-white text-xl sm:text-xl'>
                         We are Crafting the code in new way...!!
                     </p>
-                    <a href="/dashboard" class="block px-4 rounded-xl py-3 mt-10 text-lg font-bold text-white uppercase bg-gray-800 hover:bg-gray-900">
+                    <a href="/dashboard" class="block px-4 rounded-xl py-3 mt-10 text-lg font-bold text-white uppercase bg-indigo-600 hover:bg-indigo-800">
                         Dashboard
                     </a>
                 </div>
