@@ -119,7 +119,7 @@ function AssignmentShow() {
           </div>
           <img
             className="my-4"
-            src="https://images.pexels.com/photos/5474296/pexels-photo-5474296.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src={assignment.image_link}
           />
         </div>
         {Status.some(item => item._id === id) ?

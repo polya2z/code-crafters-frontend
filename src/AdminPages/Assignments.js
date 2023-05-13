@@ -38,6 +38,7 @@ function Assignments() {
     const [dueDate, setdueDate] = useState('')
     const [title, settitle] = useState("");
     const [name, setname] = useState("Assignment");
+    const [Link, setLink] = useState("");
     const [msg, setmsg] = useState("");
 
     async function saveAssignment(e) {
@@ -49,6 +50,7 @@ function Assignments() {
             body: JSON.stringify({
                 name: name,
                 topic: title,
+                image_link: Link,
                 due: dueDate
             }),
         });
@@ -134,6 +136,20 @@ function Assignments() {
                                             </div>
                                         </div>
 
+                                        <div class="flex flex-col mb-2">
+                                            <div class="flex relative ">
+                                                <input
+                                                    type="text"
+                                                    value={Link}
+                                                    onChange={(e) => {
+                                                        setLink(e.target.value);
+                                                    }}
+                                                    id="sign-in-email"
+                                                    class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                                    placeholder="Image Link"
+                                                />
+                                            </div>
+                                        </div>
 
                                         <div class="flex flex-col mb-2">
                                             <div class="flex relative ">
