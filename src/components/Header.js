@@ -25,11 +25,8 @@ function Header() {
                             <a href="/" class="mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300">
                                 Home
                             </a>
-                            <a href="/" class="mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300">
-                                Info
-                            </a>
-                            <a href="/admin/login" class="mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300">
-                                Admin
+                            <a href="/dashboard" class="mx-3 text-lg text-white uppercase cursor-pointer hover:text-gray-300">
+                                Dashboard
                             </a>
                         </div>
                     </div>
