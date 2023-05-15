@@ -3,7 +3,7 @@ import React from 'react'
 function Header() {
     return (
 
-        <div class="relative h-screen overflow-hidden bg-indigo-900">
+        <div class="relative h-screen overflow-hidden bg-black">
             <img src='head.png' class="absolute object-cover w-full h-full"  >
     </img>
             <div class="absolute inset-0 bg-black opacity-25">
