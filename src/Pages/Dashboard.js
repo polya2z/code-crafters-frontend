@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Dashboardbox from "../components/Dashboardbox";
 import Auth from "../components/Auth";
+import Alert from "../components/Alert";
 
 function Dashboard() {
     const [Loading, setLoading] = useState(false);
@@ -53,7 +54,7 @@ function Dashboard() {
           <div className="container mt-12">
 
             <div className="container sm:px-28">
-
+              <Alert text={"Due to Technical issues... Don't Submit your Assignment on the Website instead Send it on WhatsApp Group"} />
               <Dashboardbox title1={"My Assignments"} title2={"Check all your assignments."} link={'/dashboard/assignments'} />
               <Dashboardbox title1={"All Notices"} title2={"Get all your Notices"} link={'/dashboard/notices'} />
               <Dashboardbox title1={"My Account"} title2={"Edit your Accout Details"} />

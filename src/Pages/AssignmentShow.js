@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Auth from "../components/Auth";
+import Alert from "../components/Alert";
 
 function AssignmentShow() {
   const { id } = useParams();
@@ -97,6 +98,8 @@ function AssignmentShow() {
   return (
     <>
       <Navbar />
+      <Alert text={"Due to Technical issues... Don't Submit your Assignment on the Website instead Send it on WhatsApp Group"} />
+
       <div class="relative z-10 p-5 flex flex-col items-center w-full mb-8">
         <h1 class="mt-6 font-extrabold leading-tight text-center text-4xl sm:text-6xl">
           <span className="text-indigo-600">Assi</span>gnment
@@ -122,7 +125,7 @@ function AssignmentShow() {
             src={assignment.image_link}
           />
         </div>
-        {Status.some(item => item._id === id) ?
+        {/* {Status.some(item => item._id === id) ?
           ''
           :
           (
@@ -154,7 +157,7 @@ function AssignmentShow() {
               </form>
             </>
           )
-        }
+        } */}
       </div>
     </>
   );
