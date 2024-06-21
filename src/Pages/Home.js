@@ -4,6 +4,7 @@ import Signup from '../components/Signup';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import About from '../components/About';
+import React, { useEffect } from 'react';
 
 function Home() {
      useEffect(() => {
