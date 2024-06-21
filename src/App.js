@@ -26,20 +26,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Signup />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/assignments" element={<Assignments />} />
-          <Route path="/dashboard/notices" element={<Notices />} />
-          <Route path="/dashboard/assignments/:id" element={<AssignmentShow />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route path="/admin/dashboard/query" element={<AdminQuery />} />
-          <Route path="/admin/dashboard/query/:id" element={<Queryshow />} />
-          <Route path="/admin/dashboard/notices" element={<AdminNotices />} />
-          <Route path="/admin/dashboard/members-new" element={<Members />} />
-          <Route path="/admin/dashboard/members-verified" element={<VerifiedMembers />} />
-          <Route path="/admin/dashboard/assignments" element={<AdminAssignments />} />
         </Routes>
       </BrowserRouter>
     </>
